@@ -13,7 +13,7 @@
         organisationWoocommerceDetails = "";
         return_map = map();
         
-        //Check whether the woocommerce details are provided and also the provided information is correctly synced with             the account
+        //Check whether the woocommerce details are provided and also verfiy that the provided informations are correctly synchronized with the WooCommerce account
         active_woocommerce_details = zoho.crm.searchRecords("CustomModule3", "(Status|=|true)");
         responseMap = (active_woocommerce_details.toString()).toMap();
         if (responseMap  !=  null)
@@ -23,7 +23,7 @@
                 parameters = "";
                 is_fields_missing = false;
          
-                //Get the "Consumer Key" from the module "WooCommerce Site", if not found inform that the required                           informations are missing 
+                //Get the "Consumer Key" from the module "WooCommerce Site", if not found inform that the required informations are missing 
                 if ((responseMap.get("Consumer Key")  !=  null)  &&  (responseMap.get("Consumer Key")  !=  ""))
                 {
                     parameters = parameters + "&consumer_key=" + zoho.encryption.urlEncode(responseMap.get("Consumer Key"));
@@ -33,7 +33,7 @@
                     is_fields_missing = true;
                 }
                 
-                //Get the "Site URL" from the module "WooCommerce Site", if not found inform that the required                               informations are missing 
+                //Get the "Site URL" from the module "WooCommerce Site", if not found inform that the required informations are missing 
                 if ((responseMap.get("Site URL")  !=  null)  &&  (responseMap.get("Site URL")  !=  ""))
                 {
                     parameters = parameters + "&site_url=" + zoho.encryption.urlEncode(responseMap.get("Site URL"));
