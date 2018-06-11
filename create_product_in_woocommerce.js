@@ -3,7 +3,7 @@
    * (Required details : Product Name, SKU, Unit Price, Product Description) 
    * 
    **/
-   support_mail="hello@cubeyogi.com"
+   support_mail="hello@cubeyogi.com";
    has_synchronisation_issue = false;
     product_record_id = input.product.get("Products.ID");
     if ((product_record_id  !=  null)  &&  (toLong(product_record_id)  !=  null))
